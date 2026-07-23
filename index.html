@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakshata Mane | Manual Testing Engineer Portfolio</title>
+    <meta name="description" content="Portfolio of Sakshata Mane, Manual Testing Engineer experienced in Functional Testing, Regression Testing, API Testing, Database Testing, Jira, Postman, MySQL, Apache JMeter, Agile, STLC, and Software Quality Assurance.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-text">Sakshata Mane</span>
+                <span class="logo-badge">QA // Testing</span>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#why-hire" class="nav-link">Why Hire Me</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#qa-sandbox" class="nav-link">QA Sandbox</a>
+                <a href="#contact" class="nav-link btn-contact">Contact Me</a>
+            </nav>
+            <div class="nav-actions">
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" title="Toggle Light/Dark Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <!-- QA Mode Toggle Button -->
+                <button id="qa-mode-toggle" title="Toggle QA Inspect Mode (Highlights page elements)">
+                    <i class="fa-solid fa-bug"></i> <span>Inspect Page</span>
+                </button>
+                <!-- Hamburger Menu for Mobile -->
+                <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Floating Debug HUD (Visible when Inspect Mode is on) -->
+    <div id="debug-hud" class="hidden">
+        <div class="hud-header">
+            <span><i class="fa-solid fa-terminal"></i> QA Page Inspector</span>
+            <button id="hud-close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="hud-body">
+            <p><strong>Status:</strong> Active</p>
+            <p><strong>Environment:</strong> Production (Portfolio)</p>
+            <p><strong>DOM Nodes Checked:</strong> <span id="node-count">185</span></p>
+            <p><strong>Errors Logged:</strong> <span class="badge-success">0 Errors</span></p>
+            <p class="hud-hint">Hover over elements to see DOM details.</p>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        <div class="container hero-grid">
+            <div class="hero-content fade-in">
+                <div class="hero-status">
+                    <span class="pulse-indicator"></span> Available for QA & Software Test Engineer Roles
+                </div>
+                <h1 class="hero-title">
+                    Hi, I'm Sakshata Mane.<br>
+                    <span class="accent-text typing-wrapper">
+                        <span id="typing-text"></span><span class="cursor">|</span>
+                    </span>
+                </h1>
+                <p class="hero-subtitle">Ensuring Software Quality Through Precision, Testing, and Continuous Improvement.</p>
+                <p class="hero-description">
+                    Manual Testing Engineer with 11 months of experience in testing web and mobile applications. Experienced throughout the Software Testing Life Cycle (STLC) with expertise in Functional Testing, Regression Testing, API Testing, Database Testing, Defect Management, and Agile methodologies. Passionate about delivering reliable, high-quality software products.
+                </p>
+                <div class="hero-tags">
+                    <span><i class="fa-solid fa-shield-halved"></i> Manual QA</span>
+                    <span><i class="fa-solid fa-code-compare"></i> API Validation</span>
+                    <span><i class="fa-solid fa-database"></i> SQL Verification</span>
+                    <span><i class="fa-solid fa-bug"></i> Defect Tracking</span>
+                </div>
+                <div class="hero-ctas">
+                    <a href="Sakshata_Mane_Resume_ATS_Optimized.docx" class="btn btn-primary" download><i class="fa-solid fa-download"></i> Download Resume</a>
+                    <a href="#contact" class="btn btn-secondary"><i class="fa-solid fa-envelope"></i> Contact Me</a>
+                    <a href="#qa-sandbox" class="btn btn-tertiary"><i class="fa-solid fa-bug"></i> Run QA Sandbox</a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://linkedin.com/in/sakshata-mane-b1697633b" target="_blank" rel="noopener" title="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/sakshata-mane</a>
+                    <a href="https://github.com/SakshataMane" target="_blank" rel="noopener" title="GitHub Profile"><i class="fa-brands fa-square-github"></i> github.com/SakshataMane</a>
+                </div>
+            </div>
+            <div class="hero-visual fade-in">
+                <div class="visual-card">
+                    <div class="card-header">
+                        <div class="window-buttons">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="window-title">stlc_status_report.log</div>
+                    </div>
+                    <div class="card-body console-font">
+                        <p class="console-line line-green"><span class="c-tag">[PASS]</span> System initialized successfully.</p>
+                        <p class="console-line"><span class="c-tag">[INFO]</span> Candidate: Sakshata Mane</p>
+                        <p class="console-line"><span class="c-tag">[INFO]</span> Expertise: Web & Mobile QA (Android/iOS)</p>
+                        <p class="console-line"><span class="c-tag">[INFO]</span> STLC Phase: Defect Log & Retesting</p>
+                        <p class="console-line line-yellow"><span class="c-tag">[WARN]</span> 0 critical defects blocker found in portfolio.</p>
+                        <p class="console-line"><span class="c-tag">[INFO]</span> Postman API Tests: 24 assertions passed</p>
+                        <p class="console-line"><span class="c-tag">[INFO]</span> JMeter Performance: OK (Load Limit 250 VU)</p>
+                        <p class="console-line line-green"><span class="c-tag">[SUCCESS]</span> Ready for deployment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Brief Summary</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-bio fade-in">
+                    <p class="bio-para highlight">
+                        I am a passionate Manual Testing Engineer with practical industry experience in testing web and mobile applications. I enjoy finding defects before users do and believe software quality begins with detailed planning, structured testing, and continuous collaboration.
+                    </p>
+                    <p class="bio-para">
+                        I have hands-on experience throughout the Software Testing Life Cycle (STLC), working with Agile teams and using tools like Jira, Postman, MySQL, and Apache JMeter. My strengths include designing effective test cases, executing manual testing, validating APIs, verifying database integrity, and ensuring software meets business requirements.
+                    </p>
+                    <p class="bio-para">
+                        I am continuously learning new QA tools and best practices while seeking opportunities where I can contribute to delivering reliable, scalable, and user-friendly software.
+                    </p>
+                </div>
+                
+                <!-- QA Stats Grid -->
+                <div class="about-stats fade-in">
+                    <div class="stats-grid">
+                        <div class="stat-card glass-card">
+                            <span class="stat-num" data-val="11">0</span>
+                            <span class="stat-unit">Months</span>
+                            <p class="stat-desc">QA Industry Experience</p>
+                        </div>
+                        <div class="stat-card glass-card">
+                            <span class="stat-num" data-val="150">0</span>
+                            <span class="stat-unit">+</span>
+                            <p class="stat-desc">Test Cases Authored</p>
+                        </div>
+                        <div class="stat-card glass-card">
+                            <span class="stat-num" data-val="50">0</span>
+                            <span class="stat-unit">+</span>
+                            <p class="stat-desc">Defects Registered</p>
+                        </div>
+                        <div class="stat-card glass-card">
+                            <span class="stat-num" data-val="100">0</span>
+                            <span class="stat-unit">%</span>
+                            <p class="stat-desc">Defect Coverage Rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Hire Me Section -->
+    <section id="why-hire" class="why-hire-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Key Value Proposition</span>
+                <h2 class="section-title">Why Hire Me</h2>
+                <p class="section-desc">A combination of methodical validation, team alignment, and commitment to system stability.</p>
+            </div>
+            <div class="why-hire-grid">
+                <!-- Feature Card 1 -->
+                <div class="hire-card glass-card fade-in">
+                    <div class="hire-card-icon">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3>Industry Experience</h3>
+                    <p>11 months of practical Manual Testing experience in validating complex web and mobile ecosystems.</p>
+                </div>
+                <!-- Feature Card 2 -->
+                <div class="hire-card glass-card fade-in">
+                    <div class="hire-card-icon">
+                        <i class="fa-solid fa-bug-slash"></i>
+                    </div>
+                    <h3>Quality Focus</h3>
+                    <p>Committed to delivering defect-free and highly reliable software through structured test case execution.</p>
+                </div>
+                <!-- Feature Card 3 -->
+                <div class="hire-card glass-card fade-in">
+                    <div class="hire-card-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3>Team Collaboration</h3>
+                    <p>Experienced working with Agile Scrum teams, partnering closely with developers to debug and triage.</p>
+                </div>
+                <!-- Feature Card 4 -->
+                <div class="hire-card glass-card fade-in">
+                    <div class="hire-card-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3>Continuous Learning</h3>
+                    <p>Passionate about continuously improving QA skills and actively adopting modern automation tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">What I Do</span>
+                <h2 class="section-title">QA Services</h2>
+                <p class="section-desc">Offering exhaustive end-to-end software validation services to guard product stability.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card glass-card fade-in">
+                    <i class="fa-solid fa-bug"></i>
+                    <h3>Manual Testing</h3>
+                    <p>Exhaustive system exploration to capture hidden edge case bugs, verifying overall feature behaviors.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card glass-card fade-in">
+                    <i class="fa-solid fa-cube"></i>
+                    <h3>Functional Testing</h3>
+                    <p>Testing features against functional specifications to ensure actions deliver expected outputs.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card glass-card fade-in">
+                    <i class="fa-solid fa-rotate-left"></i>
+                    <h3>Regression Testing</h3>
+                    <p>Verifying existing features remain unaffected after new updates, patches, or code builds are deployed.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card glass-card fade-in">
+                    <i class="fa-solid fa-server"></i>
+                    <h3>API Testing</h3>
+                    <p>Validating endpoint responses, schemas, and error codes using Postman collections to secure data flows.</p>
+                </div>
+                <!-- Service 5 -->
+                <div class="service-card glass-card fade-in">
+                    <i class="fa-solid fa-database"></i>
+                    <h3>Database Testing</h3>
+                    <p>Writing SQL queries to verify data storage, integrity, indexing constraints, and transaction updates.</p>
+                </div>
+                <!-- Service 6 -->
+                <div class="service-card glass-card fade-in">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <h3>Mobile App Testing</h3>
+                    <p>Testing responsive layouts, user experience, and functionality across Android & iOS physical platforms.</p>
+                </div>
+                <!-- Service 7 -->
+                <div class="service-card glass-card fade-in">
+                    <i class="fa-solid fa-file-signature"></i>
+                    <h3>Test Case Design</h3>
+                    <p>Writing detailed, easy-to-follow test steps, preconditions, expected outcomes, and traceability matrices.</p>
+                </div>
+                <!-- Service 8 -->
+                <div class="service-card glass-card fade-in">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <h3>Bug Reporting</h3>
+                    <p>Documenting precise step-by-step instructions to reproduce defects, assigning severities and tracking in Jira.</p>
+                </div>
+                <!-- Service 9 -->
+                <div class="service-card glass-card fade-in">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <h3>Quality Assurance</h3>
+                    <p>Providing full-scope governance on release candidate validation to guarantee high product standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">QA Competencies</span>
+                <h2 class="section-title">Technical Expertise & Tooling</h2>
+                <p class="section-desc">
+                    Detail-oriented QA methodologies built on database validations, structured execution, and testing tools.
+                </p>
+            </div>
+
+            <div class="skills-layout">
+                <!-- Testing Skills Cards with Progress Bars -->
+                <div class="skills-category-wrapper fade-in">
+                    <h3>Testing Skills</h3>
+                    <div class="skills-bars-grid">
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span>Functional & UI Testing</span>
+                                <span class="skill-pct">95%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" data-progress="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span>Regression Testing</span>
+                                <span class="skill-pct">95%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" data-progress="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span>Smoke & Sanity Testing</span>
+                                <span class="skill-pct">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" data-progress="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span>API Testing (Postman)</span>
+                                <span class="skill-pct">85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" data-progress="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span>Database Testing (MySQL)</span>
+                                <span class="skill-pct">80%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" data-progress="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span>Web & Mobile App Testing</span>
+                                <span class="skill-pct">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" data-progress="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span>SDLC & STLC / Agile Scrum</span>
+                                <span class="skill-pct">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" data-progress="90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-tags-cloud">
+                        <span>Exploratory Testing</span>
+                        <span>Cross Browser Testing</span>
+                        <span>Cross Platform Testing</span>
+                        <span>Black Box Testing</span>
+                        <span>Boundary Value Analysis</span>
+                        <span>Equivalence Partitioning</span>
+                        <span>Requirement Traceability Matrix (RTM)</span>
+                        <span>Defect Life Cycle</span>
+                    </div>
+                </div>
+
+                <!-- Tools Section (Showcase with logos & hover animation) -->
+                <div class="skills-category-wrapper fade-in">
+                    <h3>QA Tooling & Environments</h3>
+                    <div class="tools-showcase-grid">
+                        <div class="tool-showcase-card glass-card">
+                            <div class="tool-logo"><i class="fa-brands fa-jira text-blue"></i></div>
+                            <h4>Jira</h4>
+                            <p>Defect Life Cycle management, test case tracking, agile sprint boards.</p>
+                        </div>
+                        <div class="tool-showcase-card glass-card">
+                            <div class="tool-logo"><i class="fa-solid fa-rocket text-orange"></i></div>
+                            <h4>Postman</h4>
+                            <p>API endpoint validations, JSON/XML validation, collections assertions.</p>
+                        </div>
+                        <div class="tool-showcase-card glass-card">
+                            <div class="tool-logo"><i class="fa-solid fa-database text-green"></i></div>
+                            <h4>MySQL</h4>
+                            <p>Backend validations, writing SQL queries (Joins, indexes, aggregations).</p>
+                        </div>
+                        <div class="tool-showcase-card glass-card">
+                            <div class="tool-logo"><i class="fa-solid fa-gauge-high text-yellow"></i></div>
+                            <h4>Apache JMeter</h4>
+                            <p>Basic performance tests, thread groups setup, latency evaluations.</p>
+                        </div>
+                        <div class="tool-showcase-card glass-card">
+                            <div class="tool-logo"><i class="fa-brands fa-git-alt text-red"></i></div>
+                            <h4>Git</h4>
+                            <p>Repository tracking, staging changes, pushing code builds to GitHub.</p>
+                        </div>
+                        <div class="tool-showcase-card glass-card">
+                            <div class="tool-logo"><i class="fa-solid fa-laptop-code text-indigo"></i></div>
+                            <h4>Eclipse</h4>
+                            <p>Java IDE workspace setup for learning automation script designs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">My Career Path</span>
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-desc">
+                    Practical industry experience validating system workflows, ensuring quality metrics, and documenting defects.
+                </p>
+            </div>
+
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">August 2025 – Present</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Manual Testing Intern</h3>
+                            <span class="company-tag">Biyani Technologies Pvt. Ltd.</span>
+                        </div>
+                        <p class="experience-description">
+                            Actively contributing to the Software Testing Life Cycle (STLC) across web and mobile modules in an Agile environment. Partnering with cross-functional development teams to uphold strict software quality metrics before release deployments.
+                        </p>
+                        <ul class="timeline-bullet-list">
+                            <li>Executed Functional, Regression, and UI testing across web and mobile applications.</li>
+                            <li>Designed and executed test cases based on business requirements.</li>
+                            <li>Logged, tracked, and managed defects using Jira.</li>
+                            <li>Performed API Testing using Postman.</li>
+                            <li>Validated backend data using MySQL.</li>
+                            <li>Participated in Agile Scrum meetings.</li>
+                            <li>Worked closely with developers for defect resolution.</li>
+                            <li>Improved software quality through systematic testing and retesting.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">QA & Code Projects</span>
+                <h2 class="section-title">Projects Showcase</h2>
+                <p class="section-desc">
+                    Exhaustive manual testing case studies alongside repositories on GitHub. Click "Inspect Test Artifacts" to view mock Jira logs and test matrices!
+                </p>
+            </div>
+
+            <!-- Project Filters -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="qa">QA & Manual Testing</button>
+                <button class="filter-btn" data-filter="github">GitHub Repositories</button>
+            </div>
+
+            <!-- Project Grid -->
+            <div class="projects-grid">
+                <!-- Project 1: CMS (QA) -->
+                <div class="project-card qa fade-in">
+                    <div class="project-img-placeholder text-qa">
+                        <i class="fa-solid fa-users-rectangle"></i>
+                        <span>Manual Testing Project</span>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="proj-badge">QA / Manual Testing</span>
+                        <h3>College Management System</h3>
+                        <p>An ERP-based academic management application covering admissions, attendance, examinations, and fee management.</p>
+                        
+                        <div class="project-responsibilities-block">
+                            <strong>Responsibilities:</strong>
+                            <ul class="resp-bullets">
+                                <li>Functional Testing</li>
+                                <li>Regression Testing</li>
+                                <li>Test Case Design</li>
+                                <li>Database Validation using MySQL</li>
+                                <li>Bug Reporting</li>
+                                <li>Requirement Analysis</li>
+                            </ul>
+                        </div>
+                        
+                        <ul class="card-features">
+                            <li>MySQL</li>
+                            <li>Jira</li>
+                        </ul>
+                        <div class="project-links">
+                            <button class="btn-artifacts-inspect btn-promo" data-qa-project="cms" style="width: 100%; border-color: var(--accent-sage); color: var(--accent-sage);">
+                                <i class="fa-solid fa-folder-open"></i> Inspect Test Artifacts
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: LMS (QA) -->
+                <div class="project-card qa fade-in">
+                    <div class="project-img-placeholder text-qa">
+                        <i class="fa-solid fa-laptop-file"></i>
+                        <span>Manual Testing Project</span>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="proj-badge">QA / API & Load</span>
+                        <h3>Learning Management System (LMS)</h3>
+                        <p>A web-based learning platform supporting courses, quizzes, assignments, and reporting.</p>
+                        
+                        <div class="project-responsibilities-block">
+                            <strong>Responsibilities:</strong>
+                            <ul class="resp-bullets">
+                                <li>Functional Testing</li>
+                                <li>Regression Testing</li>
+                                <li>API Testing</li>
+                                <li>Performance Testing</li>
+                                <li>Test Scenario Design</li>
+                            </ul>
+                        </div>
+                        
+                        <ul class="card-features">
+                            <li>Postman</li>
+                            <li>Apache JMeter</li>
+                            <li>Jira</li>
+                        </ul>
+                        <div class="project-links">
+                            <button class="btn-artifacts-inspect btn-promo" data-qa-project="lms" style="width: 100%; border-color: var(--accent-sage); color: var(--accent-sage);">
+                                <i class="fa-solid fa-folder-open"></i> Inspect Test Artifacts
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Mobile (QA) -->
+                <div class="project-card qa fade-in">
+                    <div class="project-img-placeholder text-qa">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        <span>Manual Testing Project</span>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="proj-badge">QA / Cross-Platform</span>
+                        <h3>Mobile Application Testing</h3>
+                        <p>Cross-platform testing of Android and iOS applications.</p>
+                        
+                        <div class="project-responsibilities-block">
+                            <strong>Responsibilities:</strong>
+                            <ul class="resp-bullets">
+                                <li>Functional Testing</li>
+                                <li>UI Testing</li>
+                                <li>Regression Testing</li>
+                                <li>Cross Platform Testing</li>
+                                <li>API Integration Validation</li>
+                                <li>Device Compatibility Testing</li>
+                            </ul>
+                        </div>
+                        
+                        <ul class="card-features">
+                            <li>Android & iOS</li>
+                            <li>Browser DevTools</li>
+                        </ul>
+                        <div class="project-links">
+                            <button class="btn-artifacts-inspect btn-promo" data-qa-project="mobile" style="width: 100%; border-color: var(--accent-sage); color: var(--accent-sage);">
+                                <i class="fa-solid fa-folder-open"></i> Inspect Test Artifacts
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: FetalAI (GitHub) -->
+                <div class="project-card github fade-in">
+                    <div class="project-img-placeholder text-github">
+                        <i class="fa-solid fa-brain"></i>
+                        <span>Machine Learning Repo</span>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="proj-badge">GitHub / Machine Learning</span>
+                        <h3>FetalAI Using ML</h3>
+                        <p>An intelligent predictive machine learning project focusing on fetal health assessments based on biomedical features.</p>
+                        <ul class="card-features">
+                            <li>Python</li>
+                            <li>Scikit-Learn</li>
+                            <li>Classification Metrics</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/SakshataMane/FetalAI_Using_ML" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> View Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Intrusion Detection (GitHub) -->
+                <div class="project-card github fade-in">
+                    <div class="project-img-placeholder text-github">
+                        <i class="fa-solid fa-shield-virus"></i>
+                        <span>Security Repo</span>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="proj-badge">GitHub / AI & Security</span>
+                        <h3>AI-Enhanced Intrusion Detection</h3>
+                        <p>A machine learning-based system designed to identify and flag unauthorized actions or malicious anomalies in network traffic.</p>
+                        <ul class="card-features">
+                            <li>Threat Analysis</li>
+                            <li>Anomaly Detection</li>
+                            <li>Python</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/SakshataMane/Ai-enhanced-intrusion-detection-system" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> View Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Smart Waste (GitHub) -->
+                <div class="project-card github fade-in">
+                    <div class="project-img-placeholder text-github">
+                        <i class="fa-solid fa-trash-can-arrow-up"></i>
+                        <span>Smart Systems Repo</span>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="proj-badge">GitHub / Smart Cities</span>
+                        <h3>Smart Waste Management</h3>
+                        <p>An urban technological prototype designing an optimized garbage disposal monitoring and reporting mechanism for metropolitan cities.</p>
+                        <ul class="card-features">
+                            <li>IoT Models</li>
+                            <li>Database Architecture</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/SakshataMane/SMART-WASTE-MANAGEMENT-SYSTEM-FOR-METROPOLITAN-CITIES" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> View Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7: Pumpkin Seed (GitHub) -->
+                <div class="project-card github fade-in">
+                    <div class="project-img-placeholder text-github">
+                        <i class="fa-solid fa-seedling"></i>
+                        <span>Classification Repo</span>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="proj-badge">GitHub / Data Science</span>
+                        <h3>Pumpkin Seed Classifier</h3>
+                        <p>A dataset classification algorithm comparing and categorizing pumpkin seed varieties based on dimensions and shapes.</p>
+                        <ul class="card-features">
+                            <li>Feature Analysis</li>
+                            <li>K-NN / SVM Models</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/SakshataMane/Pumpkin-seed" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> View Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8: Telesupport (GitHub) -->
+                <div class="project-card github fade-in">
+                    <div class="project-img-placeholder text-github">
+                        <i class="fa-solid fa-headset"></i>
+                        <span>Support Portal Repo</span>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="proj-badge">GitHub / Web Support</span>
+                        <h3>Telesupport Hub</h3>
+                        <p>A digital support ticketing portal facilitating remote communication, issue submission, and client response workflows.</p>
+                        <ul class="card-features">
+                            <li>Web Application</li>
+                            <li>Ticket Status Engine</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/SakshataMane/Telesupport-hub" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> View Repo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QA Sandbox Section (Interactive Bug Hunt) -->
+    <section id="qa-sandbox" class="qa-sandbox-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Interactive Demonstration</span>
+                <h2 class="section-title">The QA Sandbox: Can you spot the bugs?</h2>
+                <p class="section-desc">
+                    Hiring managers value attention to detail. Below is a mock "Secure Wire Transfer Widget" that has been intentionally deployed with <strong>4 major QA bugs</strong> (UI, Typo, Business Logic, and Functionality). Find them all to verify the build!
+                </p>
+            </div>
+
+            <div class="sandbox-container">
+                <!-- Sandbox Card Panel -->
+                <div class="sandbox-app">
+                    <div class="app-header">
+                        <span class="app-title"><i class="fa-solid fa-wallet"></i> PaySwift Wire Portal (Staging environment)</span>
+                        <span class="app-version">v2.1.0-beta</span>
+                    </div>
+                    <div class="app-card-wrapper">
+                        <!-- Mock Money Transfer Card -->
+                        <div class="mock-card" id="mock-card">
+                            <div class="mock-card-badge">Instant</div>
+                            <div class="mock-card-image" style="background-color: var(--accent-sage-light); color: var(--accent-sage);">
+                                <i class="fa-solid fa-money-bill-transfer"></i>
+                                <span>Secure Funds Transfer</span>
+                            </div>
+                            <div class="mock-card-content">
+                                <h3 class="mock-card-title">Wire Transfer Widget</h3>
+                                <!-- TYPO BUG: instantly proccessed & destinatiton -->
+                                <p class="mock-card-desc bug-element" id="bug-typo" data-bug-id="2" title="Click to report typo bug">
+                                    Please verify recipient details before sending funds. Transfers are <span class="typo-highlight">instantly proccessed</span> to registered <span class="typo-highlight">destinatiton</span> bank accounts.
+                                </p>
+                                
+                                <div class="mock-card-rating">
+                                    <span><i class="fa-solid fa-clock"></i> Est. Delivery: 1-2 business minutes</span>
+                                </div>
+                                
+                                <div class="price-section">
+                                    <!-- MATH/LOGIC BUG: Transfer amount $100 + Fee $5.00 != $125.00 (It should be $105.00) -->
+                                    <div class="price-breakdown bug-element" id="bug-logic" data-bug-id="3" title="Click to report math calculation bug">
+                                        <div class="price-row"><span>Transfer Amount:</span> <span>$100.00</span></div>
+                                        <div class="price-row"><span>Service Fee (5%):</span> <span>$5.00</span></div>
+                                        <div class="price-row total-row"><span>Total Debited:</span> <span class="total-bold">$125.00</span></div>
+                                    </div>
+                                    
+                                    <!-- UI/OVERLAP BUG: The badge overlaps other elements visually -->
+                                    <div class="overlap-badge bug-element" id="bug-ui" data-bug-id="1" title="Click to report UI overlapping bug">
+                                        <span>USD $100.00</span>
+                                    </div>
+                                </div>
+
+                                <div class="card-buttons">
+                                    <!-- FUNCTIONAL BUG: Clicking Apply Promo Code does nothing and throws alert/console error (broken anchor/action) -->
+                                    <button class="btn-promo bug-element" id="bug-functional" data-bug-id="4" title="Click to report broken function bug">
+                                        Get Exchange Rate
+                                    </button>
+                                    <button class="btn-checkout" onclick="alert('Proceeding to transfer funds in stable environment only!')">
+                                        Confirm Transfer
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sandbox Console Panel -->
+                <div class="sandbox-console">
+                    <div class="console-header">
+                        <span><i class="fa-solid fa-terminal"></i> QA Testing Log</span>
+                        <div class="console-controls">
+                            <span class="found-counter">Bugs Logged: <strong id="bugs-found-count">0</strong> / 4</span>
+                        </div>
+                    </div>
+                    <div class="console-body" id="sandbox-log">
+                        <p class="log-init">[SYSTEM] Initializing Sandbox Testing Suite...</p>
+                        <p class="log-init">[SYSTEM] Sandbox initialized. Double-click or click on elements in the staging card to inspect and detect bugs.</p>
+                        <p class="log-waiting">[WAITING] Awaiting test reports...</p>
+                    </div>
+                    <div class="console-footer">
+                        <div class="quality-bar-wrapper">
+                            <span>Build Health:</span>
+                            <div class="quality-bar">
+                                <div class="quality-fill" id="quality-fill" style="width: 25%"></div>
+                            </div>
+                            <span id="quality-pct">25% (CRITICAL)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QA Sandbox Success Modal -->
+            <div id="qa-success-modal" class="modal hidden">
+                <div class="modal-content">
+                    <div class="badge-ribbon"><i class="fa-solid fa-award"></i></div>
+                    <h3>QA Inspection Certified!</h3>
+                    <p>Congratulations! You identified all 4 critical bugs in the build:</p>
+                    <ul class="modal-bug-list">
+                        <li><i class="fa-solid fa-circle-check text-green"></i> <strong>UI Defect</strong>: Overlapping transaction amount badge</li>
+                        <li><i class="fa-solid fa-circle-check text-green"></i> <strong>Content Defect</strong>: Spelling typos ('proccessed' and 'destinatiton')</li>
+                        <li><i class="fa-solid fa-circle-check text-green"></i> <strong>Business Logic</strong>: Incorrect total sum calculation ($100.00 + $5.00 = $125.00)</li>
+                        <li><i class="fa-solid fa-circle-check text-green"></i> <strong>Functional Defect</strong>: Broken exchange rate fetch action</li>
+                    </ul>
+                    <p class="modal-congrats">This shows you have the exact attention to detail needed for a QA Software Tester!</p>
+                    <button class="btn btn-primary" id="btn-close-modal">Back to Portfolio</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Qualifications</span>
+                <h2 class="section-title">Education & Credentials</h2>
+            </div>
+            
+            <div class="education-grid">
+                <!-- Degree Card -->
+                <div class="edu-card fade-in">
+                    <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="edu-details">
+                        <span class="edu-year">2024 – 2026</span>
+                        <h3>Master of Computer Applications (MCA)</h3>
+                        <p class="edu-inst">D Y Patil Agriculture and Technical University, Talsande</p>
+                        <p class="edu-desc">Comprehensive curriculum covering Software Engineering, Database Systems (MySQL), Mobile App Architectures, Web Technologies, and Quality Assurance Practices.</p>
+                    </div>
+                </div>
+                <!-- Certifications Card -->
+                <div class="edu-card fade-in">
+                    <div class="edu-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="edu-details">
+                        <span class="edu-year">Professional Development</span>
+                        <h3>QA Certifications & Learning</h3>
+                        <ul class="edu-cert-list">
+                            <li><i class="fa-solid fa-badge-check text-green"></i> <strong>Software Testing Fundamentals:</strong> SDLC, STLC, Test cases design.</li>
+                            <li><i class="fa-solid fa-badge-check text-green"></i> <strong>API Validation:</strong> Assertions, response schemas using Postman.</li>
+                            <li><i class="fa-solid fa-badge-check text-green"></i> <strong>Database Testing:</strong> Query building, data integrity checks with MySQL.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Get In Touch</span>
+                <h2 class="section-title">Run an Integration Test: Contact QA</h2>
+                <p class="section-desc">
+                    Looking for a dedicated Software Test Engineer / QA Analyst? Submit the form below to initiate communication.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact info panel -->
+                <div class="contact-info fade-in">
+                    <h3>Contact Information</h3>
+                    <p>Have an open QA position or want to discuss a project? Feel free to reach out via direct channels or social platforms.</p>
+                    
+                    <div class="info-links">
+                        <div class="info-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <span>Email Me</span>
+                                <a href="mailto:sakshatamane508@gmail.com">sakshatamane508@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <span>Call Me</span>
+                                <a href="tel:+917760676980">+91 7760676980</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <span>Location</span>
+                                <p>Maharashtra, India</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links-large">
+                        <a href="https://linkedin.com/in/sakshata-mane-b1697633b" target="_blank" rel="noopener" class="social-btn linkedin-btn">
+                            <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/SakshataMane" target="_blank" rel="noopener" class="social-btn github-btn">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form with QA Validation Theme -->
+                <div class="contact-form-wrapper fade-in">
+                    <div class="form-header-qa">
+                        <span><i class="fa-solid fa-vial"></i> Test Suite: ContactMessageValidation</span>
+                        <span class="test-status-pill" id="form-test-status">Status: Standby</span>
+                    </div>
+                    <form id="qa-contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="contact-name">Tester Name (Your Name) <span class="required">*</span></label>
+                            <input type="text" id="contact-name" name="name" placeholder="e.g. John Doe" required>
+                            <div class="qa-validation-feedback" id="val-name">Assert: name.length > 0 &nbsp;&nbsp;&nbsp;&nbsp; [<span class="val-result val-neutral">PENDING</span>]</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-email">Tester Email (Your Email) <span class="required">*</span></label>
+                            <input type="email" id="contact-email" name="email" placeholder="e.g. yourname@company.com" required>
+                            <div class="qa-validation-feedback" id="val-email">Assert: email.matches(regex) &nbsp;&nbsp;&nbsp;&nbsp; [<span class="val-result val-neutral">PENDING</span>]</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-subject">Test Parameter (Subject)</label>
+                            <input type="text" id="contact-subject" name="subject" placeholder="e.g. QA Job Opportunity">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-message">Test Payload (Message) <span class="required">*</span></label>
+                            <textarea id="contact-message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                            <div class="qa-validation-feedback" id="val-message">Assert: message.words >= 3 &nbsp;&nbsp;&nbsp;&nbsp; [<span class="val-result val-neutral">PENDING</span>]</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit-form" id="btn-submit">
+                            <i class="fa-solid fa-paper-plane"></i> Run SendMessage() Action
+                        </button>
+                    </form>
+                    
+                    <!-- Success/Error alert box -->
+                    <div id="form-alert" class="alert-box hidden"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <p>&copy; 2026 Sakshata Mane. All rights reserved.</p>
+                <p class="footer-note">Manual Testing Engineer | Designed with passion for Software Quality.</p>
+            </div>
+            <div class="footer-right">
+                <a href="#hero">Back to Top <i class="fa-solid fa-arrow-up"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- QA Artifacts Vault Modal -->
+    <div id="qa-artifacts-modal" class="modal hidden">
+        <div class="modal-content artifacts-modal-content">
+            <div class="modal-header-qa">
+                <h3><i class="fa-solid fa-box-archive"></i> <span id="artifact-modal-title">Project Test Artifacts</span></h3>
+                <button id="btn-close-artifacts" class="btn-close-qa"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="artifacts-tabs">
+                <button class="art-tab-btn active" data-art-tab="cases">Test Cases</button>
+                <button class="art-tab-btn" data-art-tab="defects">Jira Defect Log</button>
+                <button class="art-tab-btn" data-art-tab="rtm">RTM Matrix</button>
+            </div>
+            
+            <div class="artifacts-body">
+                <div id="art-tab-content-cases" class="art-tab-panel active">
+                    <!-- Loaded Dynamically via JS -->
+                </div>
+                <div id="art-tab-content-defects" class="art-tab-panel">
+                    <!-- Loaded Dynamically via JS -->
+                </div>
+                <div id="art-tab-content-rtm" class="art-tab-panel">
+                    <!-- Loaded Dynamically via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Floating Button -->
+    <button id="back-to-top" title="Go to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <!-- Main JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
